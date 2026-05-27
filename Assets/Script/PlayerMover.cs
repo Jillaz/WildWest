@@ -24,10 +24,6 @@ public class PlayerMover : MonoBehaviour
         _inputSystem?.Disable();
     }
 
-    private void Start()
-    {
-    }
-
 
     private void Update()
     {

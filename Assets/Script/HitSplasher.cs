@@ -8,5 +8,4 @@ public class HitSplasher : MonoBehaviour
     {
         Destroy(gameObject, 1f);
     }
-
 }

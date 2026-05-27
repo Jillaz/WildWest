@@ -12,17 +12,12 @@ public class WeaponGun : Weapon
 
         if (_rayCastHit.point != Vector3.zero)
         {
-            Debug.Log($"Gun hit {_rayCastHit.point}");
             Instantiate(_hitSplash, _rayCastHit.point, Quaternion.identity);
-        }
-        else
-        {
-            Debug.Log($"Gun hit MISSED");
         }
     }
 
     public override void SecondaryAttack()
     {
-        throw new System.NotImplementedException();
+        Debug.Log("Gun secondary attack");
     }
 }
