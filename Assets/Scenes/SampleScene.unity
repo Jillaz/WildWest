@@ -1573,6 +1573,7 @@ GameObject:
   - component: {fileID: 1580818250}
   - component: {fileID: 1580818249}
   - component: {fileID: 1580818248}
+  - component: {fileID: 1580818251}
   m_Layer: 0
   m_Name: Capsule
   m_TagString: Untagged
@@ -1675,6 +1676,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1580818246}
   m_Mesh: {fileID: 10208, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1580818251
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1580818246}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 32e55f2764af9c944a509bd5d9fb0794, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CharacterStats
+  _totalHitPoints: 100
 --- !u!1 &1888087633
 GameObject:
   m_ObjectHideFlags: 0
@@ -1688,7 +1702,7 @@ GameObject:
   - component: {fileID: 1888087635}
   - component: {fileID: 1888087638}
   - component: {fileID: 1888087637}
-  - component: {fileID: 1888087639}
+  - component: {fileID: 1888087640}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Untagged
@@ -1799,7 +1813,7 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
---- !u!114 &1888087639
+--- !u!114 &1888087640
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1808,10 +1822,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1888087633}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 32e55f2764af9c944a509bd5d9fb0794, type: 3}
+  m_Script: {fileID: 11500000, guid: 07d26d19fb47cbc4dbfcaf9802f4fc7a, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::CharacterStats
-  _totalHitPoints: 100
+  m_EditorClassIdentifier: Assembly-CSharp::StatsUpdater
+  _characterStats: {fileID: 1580818251}
+  _textHitPoints: {fileID: 1961840626}
 --- !u!1 &1961840624
 GameObject:
   m_ObjectHideFlags: 0

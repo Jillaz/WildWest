@@ -13,6 +13,11 @@ public class WeaponGun : Weapon
         if (_rayCastHit.point != Vector3.zero)
         {
             Instantiate(_hitSplash, _rayCastHit.point, Quaternion.identity);
+
+            if (_rayCastHit.collider.TryGetComponent(out CharacterStats stats))
+            {
+                stats.GetDamage(_damage);
+            }
         }
     }
 

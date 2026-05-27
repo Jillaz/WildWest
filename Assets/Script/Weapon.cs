@@ -2,8 +2,8 @@ using UnityEngine;
 
 public abstract class Weapon : MonoBehaviour
 {
-    [SerializeField] private string _name;
-    [SerializeField] private float _damage;
+    [SerializeField] protected string _name;
+    [SerializeField] protected float _damage;
 
     public abstract void MainAttack();
 
