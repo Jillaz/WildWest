@@ -3,6 +3,8 @@ using UnityEngine.InputSystem;
 
 public class PlayerAttacker : MonoBehaviour
 {
+    [SerializeField] private Weapon _weapon;
+    [SerializeField] private Transform _weaponPosition;
     private InputSystem_Actions _inputSystem;
 
     private void Awake()
@@ -10,7 +12,12 @@ public class PlayerAttacker : MonoBehaviour
         _inputSystem = new InputSystem_Actions();
         _inputSystem.Player.Attack.started += OnAttack;
     }
-        
+
+    private void Start()
+    {
+        _weapon.transform.SetParent(_weaponPosition);
+        _weapon.transform.position = _weaponPosition.position;
+    }
 
     private void OnEnable()
     {
@@ -24,6 +31,9 @@ public class PlayerAttacker : MonoBehaviour
 
     private void OnAttack(InputAction.CallbackContext context)
     {
-        Debug.Log("Start attack!");
+        if (_weapon != null)
+        {
+            _weapon.MainAttack();
+        }
     }
 }
