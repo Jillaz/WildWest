@@ -9,9 +9,13 @@ public class CharacterStats : MonoBehaviour
 
     public event Action<float> HitPointsUpdated;
 
+    private void Awake()
+    {
+        _defaultHitPoints = _totalHitPoints;        
+    }
+
     private void Start()
     {
-        _defaultHitPoints = _totalHitPoints;
         HitPointsUpdated?.Invoke(_totalHitPoints);
     }
 

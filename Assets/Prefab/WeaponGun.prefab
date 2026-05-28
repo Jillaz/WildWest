@@ -136,6 +136,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::WeaponGun
   _name: Gun
-  _damage: 5
+  _damage: 20
   _rayCaster: {fileID: 0}
   _hitSplash: {fileID: 6598490899406939590, guid: e4575751f60abb7489a571f8420bce80, type: 3}

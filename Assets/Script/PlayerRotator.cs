@@ -13,6 +13,7 @@ public class PlayerRotator : MonoBehaviour
     {
         _inputSystem = new InputSystem_Actions();
         _inputSystem.Player.Look.performed += OnMouseLook;
+        _lookCamera.transform.rotation = Quaternion.Euler(0f, 0f, 0f);
     }
 
     private void OnMouseLook(InputAction.CallbackContext context)

@@ -22,12 +22,22 @@ public class EnemyNavMeshMover : MonoBehaviour
         {
             float startTime = Time.realtimeSinceStartup;
 
-            if (_navMeshAgent != null)
+            if (_navMeshAgent != null && _target != null)
             {
                 _navMeshAgent.SetDestination(_target.position);
             }
 
             yield return _delay;
         }
+    }
+
+    public void SetTarget(Transform target)
+    {
+        _target = target;
+    }
+
+    public void Init()
+    {
+        StartCoroutine(CalculateWay());
     }
 }
