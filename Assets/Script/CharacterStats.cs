@@ -3,20 +3,16 @@ using UnityEngine;
 
 public class CharacterStats : MonoBehaviour
 {
-    [SerializeField] private float _totalHitPoints;
-    private float _defaultHitPoints;
+    [SerializeField] private float _defaultHitPoints;
+    private float _currentHitPoints;
     private float _minHitPoints = 0;
 
-    public event Action<float> HitPointsUpdated;
-
-    private void Awake()
-    {
-        _defaultHitPoints = _totalHitPoints;        
-    }
+    public event Action<float> OnHitPointsUpdated;
+    public event Action OnLostAllHitPoints;
 
     private void Start()
     {
-        HitPointsUpdated?.Invoke(_totalHitPoints);
+        Init();
     }
 
     public void GetDamage(float damage)
@@ -27,21 +23,22 @@ public class CharacterStats : MonoBehaviour
             return;
         }
 
-        if (_totalHitPoints <= damage)
+        if (_currentHitPoints <= damage)
         {
-            _totalHitPoints = _minHitPoints;
+            _currentHitPoints = _minHitPoints;
+            OnLostAllHitPoints?.Invoke();
         }
         else
         {
-            _totalHitPoints -= damage;
+            _currentHitPoints -= damage;
         }
 
-        HitPointsUpdated?.Invoke(_totalHitPoints);
+        OnHitPointsUpdated?.Invoke(_currentHitPoints);
     }
 
     public void Init()
     {
-        _totalHitPoints = _defaultHitPoints;
-        HitPointsUpdated?.Invoke(_totalHitPoints);
+        _currentHitPoints = _defaultHitPoints;
+        OnHitPointsUpdated?.Invoke(_currentHitPoints);
     }
 }

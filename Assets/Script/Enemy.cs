@@ -5,19 +5,18 @@ public class Enemy : MonoBehaviour
 {
     [SerializeField] private EnemyNavMeshMover _navMeshMover;
     [SerializeField] private CharacterStats _characterStats;
-    private float _minHitPointValue = 0;
 
-    public event Action<Enemy> Defeated; 
+    public event Action<Enemy> OnDefeated;
 
     private void Start()
     {
-        _characterStats.HitPointsUpdated += Shoted;
+        _characterStats.OnLostAllHitPoints += Defeated;
     }
 
     public void SetTarget(Transform target)
     {
         _navMeshMover.SetTarget(target);
-    }
+    }    
 
     public void Init()
     {
@@ -25,11 +24,9 @@ public class Enemy : MonoBehaviour
         _navMeshMover.Init();
     }
 
-    private void Shoted(float value)
+    private void Defeated()
     {
-        if (value <= _minHitPointValue)
-        {
-            Defeated?.Invoke(this);
-        }
+        _navMeshMover.SetTarget(null);
+        OnDefeated?.Invoke(this);
     }
 }

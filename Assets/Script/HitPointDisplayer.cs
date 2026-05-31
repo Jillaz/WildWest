@@ -8,7 +8,7 @@ public class HitPointDisplayer : MonoBehaviour
 
     private void Start()
     {
-        _characterStats.HitPointsUpdated += UpdateHitPointText;
+        _characterStats.OnHitPointsUpdated += UpdateHitPointText;
     }
 
     private void UpdateHitPointText(float value)

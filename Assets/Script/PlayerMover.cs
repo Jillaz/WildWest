@@ -24,7 +24,6 @@ public class PlayerMover : MonoBehaviour
         _inputSystem?.Disable();
     }
 
-
     private void Update()
     {
         transform.Translate(_moveDirection * _speed * Time.deltaTime);

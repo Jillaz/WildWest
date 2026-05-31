@@ -127,7 +127,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 32e55f2764af9c944a509bd5d9fb0794, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CharacterStats
-  _totalHitPoints: 100
+  _defaultHitPoints: 100
 --- !u!1 &5523505383002987044
 GameObject:
   m_ObjectHideFlags: 0
@@ -251,7 +251,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8539dcc019ee55e4c92ad127fa937b01, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyNavMeshMover
-  _target: {fileID: 0}
   _calculateWayDelay: 0.5
 --- !u!114 &7237563423915642921
 MonoBehaviour:

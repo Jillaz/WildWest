@@ -4,25 +4,22 @@ using UnityEngine.AI;
 
 public class EnemyNavMeshMover : MonoBehaviour
 {
-    [SerializeField] private Transform _target;
     [SerializeField] private float _calculateWayDelay;
+    private Transform _target;
     private NavMeshAgent _navMeshAgent;
 
     private void Start()
     {
         _navMeshAgent = GetComponent<NavMeshAgent>();
-        StartCoroutine(CalculateWay());
     }
 
     private IEnumerator CalculateWay()
     {
         var _delay = new WaitForSeconds(_calculateWayDelay);
 
-        while (true)
+        while (_target != null)
         {
-            float startTime = Time.realtimeSinceStartup;
-
-            if (_navMeshAgent != null && _target != null)
+            if (_navMeshAgent != null)
             {
                 _navMeshAgent.SetDestination(_target.position);
             }
@@ -33,11 +30,12 @@ public class EnemyNavMeshMover : MonoBehaviour
 
     public void SetTarget(Transform target)
     {
-        _target = target;
+        _target = target;        
     }
 
     public void Init()
     {
+        StopAllCoroutines();
         StartCoroutine(CalculateWay());
     }
 }

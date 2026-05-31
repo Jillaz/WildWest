@@ -29,7 +29,7 @@ public class EnemySpawner : MonoBehaviour
             enemy.transform.position = _spawnPosition;
             enemy.SetTarget(_player);
             enemy.Init();
-            enemy.Defeated += Release;
+            enemy.OnDefeated += Release;
 
             yield return delay;
         }
@@ -37,7 +37,7 @@ public class EnemySpawner : MonoBehaviour
 
     private void Release(Enemy enemy)
     {
-        enemy.Defeated -= Release;
+        enemy.OnDefeated -= Release;
         _pool.Release(enemy);
     }
 }
