@@ -4,11 +4,15 @@ public class WeaponGun : Weapon
 {
     [SerializeField] private RayCaster _rayCaster;
     [SerializeField] private HitSplasher _hitSplash;
+    [SerializeField] private GunAnimator _gunAnimator;
     private RaycastHit _rayCastHit;
 
     public override void MainAttack()
     {
         _rayCastHit = _rayCaster.RayCast();
+        _gunAnimator.PlaymainAttack();
+
+        Debug.Log(_rayCastHit.ToString());
 
         if (_rayCastHit.point != Vector3.zero)
         {
