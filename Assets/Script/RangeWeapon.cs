@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class WeaponGun : Weapon
+public class RangeWeapon : Weapon
 {
     [SerializeField] private RayCaster _rayCaster;
     [SerializeField] private HitSplasher _hitSplash;
