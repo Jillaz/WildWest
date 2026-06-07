@@ -5,10 +5,9 @@ using UnityEngine.AI;
 public class EnemyAttacker : MonoBehaviour
 {
     [SerializeField] private NavMeshAgent _navMeshAgent;
-    [SerializeField] private MeleeWeapon _weapon;
+    [SerializeField] private Weapon _weapon;
     [SerializeField] private float _attackDelay;
     [SerializeField] private float _minAttackDistance;
-    private Coroutine _attackCoroutine;
 
     private void Update()
     {

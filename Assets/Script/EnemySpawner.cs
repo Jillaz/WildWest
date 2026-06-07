@@ -6,8 +6,8 @@ public class EnemySpawner : MonoBehaviour
     [SerializeField] private Enemy _Prefab;
     [SerializeField] private float _spawnDelay;
     [SerializeField] private Transform _player;
+    [SerializeField] private SpawnPointGenerator _spawnPointGenerator;
     private GenericPool<Enemy> _pool;
-    private Vector3 _spawnPosition = Vector3.one;
 
     private void Awake()
     {
@@ -26,7 +26,7 @@ public class EnemySpawner : MonoBehaviour
         while (true)
         {
             Enemy enemy = _pool.Get();
-            enemy.transform.position = _spawnPosition;
+            enemy.transform.position = _spawnPointGenerator.GetSpawnPosition(_player.position);
             enemy.SetTarget(_player);
             enemy.Init();
             enemy.OnDefeated += Release;

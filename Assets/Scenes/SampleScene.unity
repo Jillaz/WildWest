@@ -1307,7 +1307,7 @@ Transform:
   m_GameObject: {fileID: 1041164241}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 20.3, y: 1, z: -0.21}
+  m_LocalPosition: {x: 2.9, y: 1, z: 1.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1555,6 +1555,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2104333664}
   - component: {fileID: 2104333663}
+  - component: {fileID: 2104333665}
   m_Layer: 0
   m_Name: EnemySpawner
   m_TagString: Untagged
@@ -1575,8 +1576,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemySpawner
   _Prefab: {fileID: 5681329313890050673, guid: f4de91f40a59f1b40bb24dcc609133ee, type: 3}
-  _spawnDelay: 10
+  _spawnDelay: 0.1
   _player: {fileID: 1041164242}
+  _spawnPointGenerator: {fileID: 2104333665}
 --- !u!4 &2104333664
 Transform:
   m_ObjectHideFlags: 0
@@ -1592,6 +1594,22 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2104333665
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2104333662}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f3c83235abcd37940a3abf15f088607b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SpawnPointGenerator
+  _minSpawnDistanceFromPlayer: 20
+  _maxSpawnDistanceFromPlayer: 30
+  _navMeshCheckRadius: 2
+  _maxHeight: 2
 --- !u!4 &403874359794381015 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3592926915414452814, guid: 4a4de3fc5d9547f498c71a79707a9f7e, type: 3}
@@ -1729,15 +1747,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6229049041666120958, guid: f4de91f40a59f1b40bb24dcc609133ee, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 7.99834
+      value: 13.81
       objectReference: {fileID: 0}
     - target: {fileID: 6229049041666120958, guid: f4de91f40a59f1b40bb24dcc609133ee, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0
+      value: 1.63
       objectReference: {fileID: 0}
     - target: {fileID: 6229049041666120958, guid: f4de91f40a59f1b40bb24dcc609133ee, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -1.91931
+      value: 3.57
       objectReference: {fileID: 0}
     - target: {fileID: 6229049041666120958, guid: f4de91f40a59f1b40bb24dcc609133ee, type: 3}
       propertyPath: m_LocalRotation.w

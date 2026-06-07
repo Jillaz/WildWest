@@ -233,7 +233,7 @@ CapsuleCollider:
     m_Bits: 64
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 128
   m_LayerOverridePriority: 0
   m_IsTrigger: 1
   m_ProvidesContacts: 0
@@ -417,11 +417,11 @@ NavMeshAgent:
   m_GameObject: {fileID: 5523505383002987044}
   m_Enabled: 1
   m_AgentTypeID: 0
-  m_Radius: 0.5
+  m_Radius: 0.7
   m_Speed: 3.5
   m_Acceleration: 8
   avoidancePriority: 50
-  m_AngularSpeed: 360
+  m_AngularSpeed: 3600
   m_StoppingDistance: 3
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
@@ -442,7 +442,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8539dcc019ee55e4c92ad127fa937b01, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyNavMeshMover
-  _calculateWayDelay: 0.5
+  _calculateWayDelay: 0.3
 --- !u!114 &7237563423915642921
 MonoBehaviour:
   m_ObjectHideFlags: 0
