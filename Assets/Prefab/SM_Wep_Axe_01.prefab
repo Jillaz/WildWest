@@ -102,9 +102,10 @@ GameObject:
   - component: {fileID: 33854814112642798}
   - component: {fileID: 23974335688473604}
   - component: {fileID: 8894260423285080676}
+  - component: {fileID: 7359653655315159256}
   - component: {fileID: 4050035889618328374}
   - component: {fileID: 2569336813197689495}
-  - component: {fileID: 7359653655315159256}
+  - component: {fileID: 4606422908519388856}
   m_Layer: 0
   m_Name: SM_Wep_Axe_01
   m_TagString: Untagged
@@ -207,6 +208,27 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!65 &7359653655315159256
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1909035667600302}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.3, y: 0.3, z: 0.1}
+  m_Center: {x: -0.1, y: 0.5, z: 0}
 --- !u!114 &4050035889618328374
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -231,24 +253,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ef914c147a6e9944846b37c1bb16abc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MeleeWeaponAnimator
---- !u!65 &7359653655315159256
-BoxCollider:
+--- !u!114 &4606422908519388856
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1909035667600302}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 1
-  m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 0.3, y: 0.3, z: 0.1}
-  m_Center: {x: -0.1, y: 0.5, z: 0}
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 16ff038e4a42f1e47bde3e7fb6285341, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::MeleeWeapon
+  _name: 
+  _damage: 0
+  _hitDetector: {fileID: 0}
+  _meleeWeaponAnimator: {fileID: 0}

@@ -7,17 +7,17 @@ public class MeleeWeapon : Weapon
 
     private void OnEnable()
     {
-        _hitDetector.OnMeleeHit += OnHit;
+        //_hitDetector.OnMeleeHit += OnHit;
     }
 
     private void OnDisable()
     {
-        _hitDetector.OnMeleeHit -= OnHit;
+        //_hitDetector.OnMeleeHit -= OnHit;
     }
 
     public override void MainAttack()
     {
-        _meleeWeaponAnimator.PlayHit();
+        //_meleeWeaponAnimator.PlayHit();
     }
 
     public override void SecondaryAttack()

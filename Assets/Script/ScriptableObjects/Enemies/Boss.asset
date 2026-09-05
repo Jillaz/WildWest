@@ -17,6 +17,6 @@ MonoBehaviour:
   _size: 3
   _attackRange: 4
   _modelPrefab: {fileID: 0}
-  _weaponPrefab: {fileID: 0}
+  _weaponType: 2
   _attackDelay: 4
   _attackSpeed: 3

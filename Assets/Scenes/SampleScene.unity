@@ -1678,6 +1678,53 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ab0f6d3794043b7498569cc81633c2ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::HitPoints
+--- !u!1 &1212885120
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1212885122}
+  - component: {fileID: 1212885121}
+  m_Layer: 0
+  m_Name: WeaponPool
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1212885121
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1212885120}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1173c90492ef0c940af7278847029da1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::WeaponsPool
+  _axePrefab: {fileID: 4606422908519388856, guid: a9ce240016adad54c891dd92accd9d3e, type: 3}
+  _hammerPrefab: {fileID: 2405962408287236192, guid: ce7b0aa625aa70443bd52f7350359f2a, type: 3}
+  _revolverPrefab: {fileID: 1363608847851318812, guid: 0899c137b52e2d84186be4326da35577, type: 3}
+--- !u!4 &1212885122
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1212885120}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 5.40291, y: 0, z: -6.36434}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1286600346
 GameObject:
   m_ObjectHideFlags: 0
@@ -2123,7 +2170,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9303bdcd966558541975b712a7fb1291, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemySpawner
-  _Prefab: {fileID: 1382553768159592111, guid: 83545393661edd74d89cae3e4668ed0f, type: 3}
+  _prefab: {fileID: 1382553768159592111, guid: 83545393661edd74d89cae3e4668ed0f, type: 3}
+  _weaponPool: {fileID: 1212885121}
   _player: {fileID: 1041164242}
   _spawnPointGenerator: {fileID: 2104333665}
   _enemySpawnCount: 30
@@ -2256,3 +2304,4 @@ SceneRoots:
   - {fileID: 870210953}
   - {fileID: 1005528404}
   - {fileID: 2104333664}
+  - {fileID: 1212885122}

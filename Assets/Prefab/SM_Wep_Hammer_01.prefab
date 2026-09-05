@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 2159603365537222941}
   - component: {fileID: 3204047973606075803}
   - component: {fileID: 8659418131576469709}
+  - component: {fileID: 2405962408287236192}
   m_Layer: 7
   m_Name: SM_Wep_Hammer_01
   m_TagString: Untagged
@@ -162,6 +163,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ef914c147a6e9944846b37c1bb16abc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MeleeWeaponAnimator
+--- !u!114 &2405962408287236192
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1294210970984720}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 16ff038e4a42f1e47bde3e7fb6285341, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::MeleeWeapon
+  _name: 
+  _damage: 0
+  _hitDetector: {fileID: 0}
+  _meleeWeaponAnimator: {fileID: 0}
 --- !u!1 &1587359207778316
 GameObject:
   m_ObjectHideFlags: 0

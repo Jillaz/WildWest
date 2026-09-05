@@ -1,5 +1,4 @@
 using System;
-using TMPro;
 using UnityEngine;
 
 [RequireComponent(typeof(EnemyNavMeshMover))]
@@ -8,7 +7,9 @@ using UnityEngine;
 public class EnemyCore : MonoBehaviour
 {
     [SerializeField] private EnemyAnimator _animator;
+    [SerializeField] private Transform _weaponSlot;    
     private Transform _target;
+    private WeaponsPool _weaponPool;
 
     private EnemyNavMeshMover _mover;
     private EnemyAttacker _attacker;
@@ -122,6 +123,16 @@ public class EnemyCore : MonoBehaviour
     {
         _stats = config;
         _hitPoints.Init(config);
+        transform.localScale = Vector3.one * _stats.Size;
+    }
+
+    public void GetWeaponFromPool(WeaponsPool pool)
+    {
+        _weaponPool = pool;
+        var weapon = _weaponPool.GetWeapon(_stats.WeaponType);
+        weapon.transform.position = _weaponSlot.transform.position;
+        weapon.transform.parent = _weaponSlot.transform;
+        weapon.transform.localScale = Vector3.one * _stats.Size;
     }
 
     private void Defeated()

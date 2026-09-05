@@ -282,6 +282,7 @@ GameObject:
   - component: {fileID: 33019810325464768}
   - component: {fileID: 23299499522456724}
   - component: {fileID: 8445138706349716186}
+  - component: {fileID: 5621034312644679323}
   m_Layer: 0
   m_Name: SM_Wep_Revolver_01
   m_TagString: Untagged
@@ -386,3 +387,19 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &5621034312644679323
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1902353365401686}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 16ff038e4a42f1e47bde3e7fb6285341, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::MeleeWeapon
+  _name: 
+  _damage: 0
+  _hitDetector: {fileID: 0}
+  _meleeWeaponAnimator: {fileID: 0}

@@ -5,7 +5,8 @@ using UnityEngine;
 
 public class EnemySpawner : MonoBehaviour
 {
-    [SerializeField] private EnemyCore _Prefab;
+    [SerializeField] private EnemyCore _prefab;
+    [SerializeField] private WeaponsPool _weaponPool;
     [SerializeField] private Transform _player;
     [SerializeField] private SpawnPointGenerator _spawnPointGenerator;
     [SerializeField] private int _enemySpawnCount;
@@ -17,7 +18,7 @@ public class EnemySpawner : MonoBehaviour
 
     private void Awake()
     {
-        _pool = new GenericPool<EnemyCore>(_Prefab);
+        _pool = new GenericPool<EnemyCore>(_prefab);
     }
 
     private void Start()
@@ -43,6 +44,7 @@ public class EnemySpawner : MonoBehaviour
                 enemy.transform.position = _spawnPointGenerator.GetSpawnPosition(_player.position);
                 enemy.SetTarget(_player);
                 enemy.Init(enemySet.EnemyConfig);
+                enemy.GetWeaponFromPool(_weaponPool);
                 enemy.OnDefeated += Release;
 
                 _activeEnemies.Add(enemy);

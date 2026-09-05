@@ -19,6 +19,5 @@ public class EnemiesNumberDisplayer : MonoBehaviour
     private void DisplayTimer(int timer)
     {
         _textMeshPro.text = timer.ToString();
-        //Debug.Log($"Следующая волна через: {timer}");
     }
 }

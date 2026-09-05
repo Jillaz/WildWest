@@ -10,7 +10,7 @@ public class EnemyAttacker : MonoBehaviour
     private bool _isAttacking;
 
     public event Action<bool> AttackFinished;
-
+    
     public void Init(EnemiesStats stats)
     {
         _animator.SetAttackSpeed(stats.AttackSpeed);
