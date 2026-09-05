@@ -1,0 +1,30 @@
+using System;
+using UnityEngine;
+
+public class MeleeHitDetector : MonoBehaviour
+{
+    private Collider _collider;
+
+    public event Action<Collider> OnMeleeHit;
+
+    private void Awake()
+    {
+        _collider = GetComponent<Collider>();
+        _collider.enabled = false;
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        OnMeleeHit?.Invoke(other);
+    }
+
+    public void StartHit()
+    {
+        _collider.enabled = true;
+    }
+
+    public void StopHit()
+    {
+        _collider.enabled = false;
+    }
+}

@@ -1,18 +1,20 @@
 using TMPro;
 using UnityEngine;
 
-public class HitPointDisplayer : MonoBehaviour
+public abstract class HitPointDisplayer : MonoBehaviour
 {
-    [SerializeField] private CharacterStats _characterStats;
-    [SerializeField] private TextMeshPro _textHitPoints;
+    [SerializeField] protected HitPoints _characterStats;
 
-    private void Start()
+    private void OnEnable()
     {
         _characterStats.OnHitPointsUpdated += UpdateHitPointText;
     }
 
-    private void UpdateHitPointText(float value)
+    private void OnDisable()
     {
-        _textHitPoints.text = $"{value}";
+        _characterStats.OnHitPointsUpdated -= UpdateHitPointText;
     }
+
+    public abstract void UpdateHitPointText(float value);
+
 }

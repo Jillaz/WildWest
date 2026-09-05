@@ -6,7 +6,6 @@ public class SpawnPointGenerator : MonoBehaviour
     [SerializeField] private float _minSpawnDistanceFromPlayer;
     [SerializeField] private float _maxSpawnDistanceFromPlayer;
     [SerializeField] private float _navMeshCheckRadius;
-    [SerializeField] private float _maxHeight;
     private Vector3 _spawnPosition;
     private bool _isSpawning;
     private int _spawnTry;
